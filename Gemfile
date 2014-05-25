@@ -8,7 +8,7 @@ gem 'bootstrap-sass', '2.3.2.0'
 gem 'sprockets', '2.11.0'
 
 # Use postgresql as the database for Active Record
-
+gem 'bcrypt-ruby', '3.1.2'
 gem 'minitest'
 
 # Use SCSS for stylesheets
