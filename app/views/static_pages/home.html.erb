@@ -6,10 +6,9 @@
     This is the home page for the bughouse chess game application.
   </h2>
   <% if !signed_in? %>
-  	<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+  	<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-success" %>
   <% else %>
   	<%= link_to "Go to Profile", current_user, class: "btn btn-large btn-primary" %>
   <% end %>
 </div>
-
 

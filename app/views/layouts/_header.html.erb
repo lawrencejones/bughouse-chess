@@ -4,11 +4,12 @@
       <%= link_to "Bughouse Chess", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
-          <li><%= link_to "Home", root_path %></li>
-          <li><%= link_to "Help", help_path %></li>
+          <li class="<%= is_active?(root_path) %>"><%= link_to "Home", root_path %></li>
+          <li class="<%= is_active?(help_path) %>"><%= link_to "Help", help_path %></li>
           <% if signed_in? %>
-            <li><%= link_to "Users", '#' %></li>
-            <li id="fat-menu" class="dropdown">
+            <li class="<%= is_active?('#') %>"><%= link_to "Users", '#' %></li>
+            <li id="fat-menu" class="dropdown <%= is_active?(current_user)%> 
+                              <%=is_active?(edit_user_path(current_user)) %>">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>
               </a>
@@ -22,7 +23,7 @@
               </ul>
             </li>
           <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
+            <li  class="<%= is_active?(signin_path) %>"><%= link_to "Sign in", signin_path %></li>
           <% end %>
         </ul>
       </nav>
