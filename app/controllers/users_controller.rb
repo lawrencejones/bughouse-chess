@@ -49,7 +49,7 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	if @user.save
   		sign_in @user
-  		UserMailer.send_welcome_email(@user).deliver
+  		UserMailer.send_signup_email(@user).deliver
   		flash[:success] = "Welcome to the Bughouse Chess App!"
   		redirect_to @user
   	else
