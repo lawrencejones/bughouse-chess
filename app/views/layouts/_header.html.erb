@@ -5,8 +5,7 @@
       <nav>
         <ul class="nav pull-right">
           <li class="<%= is_active?(root_path) %>"><%= link_to "Home", root_path %></li>
-          <!-- <li class="<%= is_active?(help_path) %>"><%= link_to "Help", help_path %></li> -->
-          <li><%= link_to "Top Players", top10_path %>
+          <li class="<%= is_active?(top10_path) %>"><%= link_to "Top Players", top10_path %>
           <% if signed_in? %>
             <li class="<%= is_active?(users_path) %>"><%= link_to "Users", users_path %></li>
             <li id="fat-menu" class="dropdown <%= is_active?(current_user)%> 
