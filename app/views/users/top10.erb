@@ -1,0 +1,31 @@
+<style>
+.table {
+	margin: 0px auto;
+}
+</style>
+
+<% provide(:title, 'Top users') %><br>
+<h1>Top 10 Players</h1><br>
+<!-- <ul class="users"> -->
+<div class="row">
+<aside class="span8">
+<table class="table table-hover">
+  <tr>
+      <td><h4>#</h4></td>
+      <td><h4>User name</h4></td>
+      <td><h4>Proficiency</h4></td>
+      <td><h4>Score</h4></td>
+  </tr>
+  <% @users.each_with_index do |user, index| %>
+    <tr>
+      <td><%= index + 1 %></td>
+      <td><%= gravatar_for user, size: 52 %>
+      	  <%= link_to user.name, user %></td>
+      <td><%= user.level %></td>
+      <td><%= user.points %></td>
+    </tr>
+   <% end %>
+</table>
+</aside>
+</div><br><br>
+<!-- </ul> -->

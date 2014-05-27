@@ -10,7 +10,12 @@ class UsersController < ApplicationController
     else
       @users = User.paginate(page: params[:page], per_page: 10)
     end
-     
+  end
+
+  def top10
+    # @users = User.all
+    @users = User.order('points DESC')
+    @users = @users[1..10]
   end
 
   def show
@@ -22,7 +27,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-  	# @user = User.find(params[:id])	
   end
 
   def update
