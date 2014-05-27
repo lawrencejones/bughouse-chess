@@ -7,7 +7,7 @@ Rails.application.initialize!
 ActionMailer::Base.smtp_settings = {
 	:user_name => 'app25563468@heroku.com',
 	:password => 'Your Password',
-	:domain => 'my-bughouse-chess.herokuapp.com',
+	:domain => 'heroku.com',
 	:address => 'smtp.sendgrid.net',
 	:port => 587,
 	:authentication => :plain,
