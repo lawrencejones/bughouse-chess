@@ -6,7 +6,7 @@ Rails.application.initialize!
 
 ActionMailer::Base.smtp_settings = {
 	:user_name => 'app25563468@heroku.com',
-	:password => 'Your Password',
+	:password => 'ayjy7qto',
 	:domain => 'heroku.com',
 	:address => 'smtp.sendgrid.net',
 	:port => 587,

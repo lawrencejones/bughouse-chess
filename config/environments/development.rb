@@ -40,7 +40,7 @@ Rails.application.configure do
   
   config.action_mailer.smtp_settings = {
     :user_name            => ENV['app25563468@heroku.com'],
-    :password             => ENV['Your Password'],
+    :password             => ENV['ayjy7qto'],
     :domain               => ENV['heroku.com'],
     :address              => 'smtp.sendgrid.net',
     :port                 => 587,
