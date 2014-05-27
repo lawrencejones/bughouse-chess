@@ -1,6 +1,13 @@
+ <style>
+    .table {
+     width:350px;
+    }
+  </style>
+
 <% provide(:title, @user.name) %>
+<div class="text-left hero-unit">
 <div class="row">
-  <aside class="span4">
+  <aside class="span10">
     <section>
       <h1>
         <%= gravatar_for @user %>
@@ -8,4 +15,33 @@
       </h1>
     </section>
   </aside>
+
+</div><br>
+<h2 class="text-left">Profile summary</h2>
+<table class="table table-hover", width="10">
+	<tr>
+		<td>TotalGames</td>
+		<td><%= @user.totalGames %></td>
+	</tr>
+	<tr>
+		<td>Win</td>
+		<td><%= @user.wins %></td>
+	</tr>
+	<tr>
+		<td>Lost</td>
+		<td><%= @user.lost %></td>
+	</tr>
+	<tr>
+		<td>Draw</td>
+		<td><%= @user.draws %></td>
+	</tr>
+	<tr>
+		<td>Points</td>
+		<td><%= @user.points %></td>
+	</tr>
+	<tr>
+		<td>Level</td>
+		<td><%= @user.level %></td>
+	</tr>
+</table>
 </div>
