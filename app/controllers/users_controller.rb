@@ -13,9 +13,7 @@ class UsersController < ApplicationController
   end
 
   def top10
-    # @users = User.all
-    @users = User.order('points DESC')
-    @users = @users[1..10]
+    @users = User.order('points DESC')[1..10]
   end
 
   def show
@@ -30,7 +28,6 @@ class UsersController < ApplicationController
   end
 
   def update
-  	# @user = User.find(params[:id])
     if @user.update_attributes(user_params)
 	  flash[:success] = "Profile updated"
       redirect_to @user    
@@ -63,8 +60,6 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
     end
-
-    # Before filters
 
     def signed_in_user
       unless signed_in?

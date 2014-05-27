@@ -40,4 +40,8 @@ module SessionsHelper
     session[:return_to] = request.url if request.get?
   end
 
+  def online?(last_seen)
+    last_seen > 5.minutes.ago
+  end
+
 end
