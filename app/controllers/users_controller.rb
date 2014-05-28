@@ -6,7 +6,17 @@ class UsersController < ApplicationController
 
   def index
     if params[:search]
-      @users = (User.search(params[:search])).paginate(page: params[:page], per_page: 10)
+      inter_rezult = Array.new
+      q = params[:search].downcase
+      @users = User.all
+      # Hardcoded filter was necessary because normal does not work with heroku
+      # for some reason heroku forces case sensitivity
+      @users.each do |user|
+        if user.name.downcase.include? q
+          inter_rezult << user
+        end
+      end
+      @users = inter_rezult.paginate(page: params[:page], per_page: 10)
     else
       @users = User.paginate(page: params[:page], per_page: 10)
     end
