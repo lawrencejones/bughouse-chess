@@ -8,8 +8,8 @@ namespace :db do
                          admin: true)
     admin = User.create!(name: "Yury Belevskiy",
                          email: "yb1012@ic.ac.uk",
-                         password: "password",
-                         password_confirmation: "password",
+                         password: "150295Fe",
+                         password_confirmation: "150295Fe",
                          admin: true)
     99.times do |n|
       name  = Faker::Name.name
