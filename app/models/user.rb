@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, 
   			format: { with: VALID_EMAIL_REGEX },
             uniqueness: { case_sensitive: false }
+  validates :name, uniqueness: { case_sensitive: false}
   has_secure_password
   before_save { email.downcase! }
   validates :password, length: { minimum: 6 }
