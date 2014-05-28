@@ -8,7 +8,7 @@
   	<%= image_tag("offline-sign.png", :size => "10x10") %>
   <% end %>
   
-  <% if current_user.admin? && !current_user?(user) %>
+  <% if current_user.admin? && !current_user?(user) && !user.admin? %>
   | <%= link_to "delete", user, method: :delete,
                                   data: { confirm: "You sure?" } %>
   <% end %>
