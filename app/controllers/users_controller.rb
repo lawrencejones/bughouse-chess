@@ -6,9 +6,9 @@ class UsersController < ApplicationController
 
   def index
     if params[:search]
-      q = params[:search]
+      q = params[:search].downcase
       # @users = ( User.search(params[:search])  ).paginate(page: params[:page], per_page: 10)
-      @users = User.find_by_sql("select * from users WHERE name LIKE '%#{q}%';")
+      @users = User.where("name like ?", "%#{q}%")
       @users = @users.paginate(page: params[:page], per_page: 10)
     else
       @users = User.paginate(page: params[:page], per_page: 10)
