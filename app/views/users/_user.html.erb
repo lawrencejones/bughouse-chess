@@ -1,15 +1,13 @@
-<li>
-  <%= gravatar_for user, size: 52 %>
-  <%= link_to user.name, user %>
-  
+<tr>
+  <td><%= gravatar_for user, size: 52 %></td>
+  <td><%= link_to user.name, user %>
   <% if online?(user.lastSeen) %>
    	<%= image_tag("online-sign.png", :size => "10x10") %>
   <% else  %>
   	<%= image_tag("offline-sign.png", :size => "10x10") %>
-  <% end %>
-  
-  <% if current_user.admin? && !current_user?(user) && !user.admin? %>
-  | <%= link_to "delete", user, method: :delete,
+  <% end %></td>
+  <td><% if current_user.admin? && !current_user?(user) && !user.admin? %>
+  <%= link_to "delete", user, method: :delete,
                                   data: { confirm: "You sure?" } %>
-  <% end %>
-</li>
+  <% end %></td>
+</tr>

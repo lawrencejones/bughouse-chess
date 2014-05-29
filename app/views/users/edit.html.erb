@@ -1,27 +1,43 @@
 <% provide(:title, "Edit user") %>
-<h1>Update your profile</h1>
+<br><h1>Update your profile</h1><br><br>
 
-<div class="row">
-  <div class="span6 offset3">
-    <%= form_for(@user) do |f| %>
-      <%= render 'shared/error_messages' %>
+<div class="container">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <%= form_for(@user) do |f| %>
+            
+            <%= render 'shared/error_messages' %>
 
-      <%= f.label :name %>
-      <%= f.text_field :name %>
+            <div class="my-blue" ><%= f.label :name %>
+            <%= f.text_field :name, class: "form-control my-blue" %>
+            <br>
+            <%= f.label :email %>
+            <%= f.text_field :email, class: "form-control my-blue" %>
+            <br>
+            <%= f.label :password %>
+            <%= f.password_field :password, placeholder: "Password", class: "form-control my-blue" %>
+            <br>
+            <%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "form-control my-blue" %>
+            <br><br></div>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <%= gravatar_for @user %>
+                    <a href="http://gravatar.com/emails">change</a>
+                </div>
+            </div><br><br><br>
+      
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6">
+                    <%= f.submit "Save changes", class: "btn btn-default btn-lg btn-block" %>
+                </div>
+                <div class="col-md-3"></div>
+            </div>
 
-      <%= f.label :email %>
-      <%= f.text_field :email %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, placeholder: "Password" %>
-
-      <%= f.label :password_confirmation, "Confirm Password" %>
-      <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
-
-      <%= f.submit "Save changes", class: "btn btn-large btn-success" %>
-    <% end %>
-
-    <%= gravatar_for @user %>
-    <a href="http://gravatar.com/emails">change</a>
-  </div>
+        <% end %>
+        <br><br>
+    </div>
+    <div class="col-md-3"></div>  
 </div>

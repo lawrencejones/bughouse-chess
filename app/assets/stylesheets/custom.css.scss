@@ -2,7 +2,11 @@
 
 /* mixins, variables, etc. */
 
-$grayMediumLight: #eaeaea;
+$grayMediumLight: #007aff;
+$grayLighter: #007aff;
+$grayDarker: #007aff;
+$grayLight: #007aff;
+$gray: #007aff;
 
 /* universal */
 
@@ -39,6 +43,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+  color:#0059b8;
 }
 
 h1 {
@@ -46,6 +51,7 @@ h1 {
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
+  color:#0059b8;
 }
 
 h2 {
@@ -54,7 +60,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $grayLight;
+  color:#0059b8;
 }
 
 p {
@@ -85,14 +91,14 @@ p {
 
 footer {
   
-  border-top: 1px solid $gray;
+  border-top: 1px solid #007aff;
   bottom:0;
   width: inherit;
-  color: $grayLight;
+  color: #007aff;
   a {
     color: $gray;
     &:hover {
-      color: $grayDarker;
+      color: #007aff;
     }
   }
   small {

@@ -11,5 +11,12 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require bootstrap-ios7
+ *= require leaflet
  *= require_self
  */
+
+
+td, li, p, h1, h2, h3, h4, h5, .my-blue {
+  color: #007aff;
+}

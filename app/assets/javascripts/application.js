@@ -12,6 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require bootstrap
+//= require bootstrap-ios7
+
+//= require angular
+//= require leaflet
+
 //= require turbolinks
 //= require_tree .

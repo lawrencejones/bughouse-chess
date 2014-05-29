@@ -1,14 +1,12 @@
 <br><br><br><br>
-<div class="center hero-unit">
+<div class="center jumbotron">
   <h1>Welcome to the Chess App</h1>
-
-  <h2>
-    This is the home page for the bughouse chess game application.
-  </h2>
+  <h2>This is the home page for the bughouse chess game application.</h2>
+  <br>
   <% if !signed_in? %>
-  	<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-success" %>
+  	<%= link_to "Sign up now!", signup_path, class: "btn btn-default btn-lg btn-block" %>
   <% else %>
-  	<%= link_to "Go to Profile", current_user, class: "btn btn-large btn-primary" %>
-  <% end %>
+  	<%= link_to "Go to Profile", current_user, class: "btn btn-default btn-lg btn-block" %>
+  <% end %><br><br>
 </div>
-
+<br><br><br><br>

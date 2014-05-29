@@ -1,20 +1,27 @@
 <% provide(:title, 'All users') %>
 <h1>All users</h1><br><br>
 
-<%= form_tag(users_path, :method => "get", id: "search-form") do %>
-  <div class="row">
-  	<div class="span5">
-	  <%= text_field_tag :search, params[:search], placeholder: "Search Users by name" %>
-	  <%= submit_tag "Search", :name => nil, class: "btn btn-large btn-primary" %>
+<div class="container">
+	
+	<%= form_tag(users_path, :method => "get", class:"form-signin") do %>
+	  	<div class="row">
+		  	<div class="col-md-3">
+		  		<%= text_field_tag :search, params[:search], placeholder: "Search Users by name", class: "form-control my-blue" %>
+		    </div></div><br>
+	    <div class="row">
+		    <div class="col-md-2">
+		    	<%= submit_tag "Search", :name => nil, class: "btn btn-default" %>
+			</div></div>
+	<% end %><br><br>
+    
+
+	<div class="row">
+		<div class="col-md-8">
+			<%= will_paginate %><br>
+			<table class="table table-hover">
+		    	<%= render @users %>
+			</table>
+			<%= will_paginate %><br>
+		</div>
 	</div>
-  </div>
-<% end %><br><br>
-
-<div class="pagination">
-<%= will_paginate %>
 </div>
-<ul class="users">
-    <%= render @users %>
-</ul>
-
-<%= will_paginate %><br>

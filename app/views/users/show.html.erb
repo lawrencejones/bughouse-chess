@@ -1,50 +1,60 @@
-<% provide(:title, @user.name) %>
-<div class="text-left hero-unit">
-<div class="row">
-  <aside class="span10">
-    <section>
-      <h1>
-        <%= gravatar_for @user %>
-        <%= @user.name %>
-        <% if online?(@user.lastSeen) %>
-        	<%= image_tag("online-sign.png", :size => "20x20") %>
-        <% else  %>
-        	<%= image_tag("offline-sign.png", :size => "20x20") %>
-        <% end %>
-      </h1>
-    </section>
-  </aside><br><br><br>
+<% provide(:title, @user.name) %><br>
+<div class="jumbotron">
 
-  <aside class="span5">
-  	<h2 class="text-left">Profile summary</h2>
-  	<!-- Profile summary table begin-->
-    <table class="table table-hover">
-      <tr>
-		<td>TotalGames</td>
-		<td><%= @user.totalGames %></td>
-	  </tr>
-	  <tr>
-		<td>Win</td>
-		<td><%= @user.wins %></td>
-	  </tr>
-	  <tr>
-		<td>Lost</td>
-		<td><%= @user.lost %></td>
-	  </tr>
-	  <tr>
-		<td>Draw</td>
-		<td><%= @user.draws %></td>
-	  </tr>
-	  <tr>
-		<td>Points</td>
-		<td><%= @user.points %></td>
-	  </tr>
-	  <tr>
-		<td>Level</td>
-		<td><%= @user.level %></td>
-	  </tr>
-	</table>
-	<!-- Profile summary table end-->
-  </aside>
-</div>
-</div>
+	<div class="container">
+	  
+
+		<div class="row">
+			<div class="col-md-2" >
+				<%= image_tag("default_user_img_lightblue_bg.jpg", alt:"Responsive image",  class:"img-rounded", size: "140x140") %>
+			</div>
+		    <div class="col-md-8 my-blue">
+		      	<h1>
+		        	<%= @user.name %>
+		        	<% if online?(@user.lastSeen) %>
+		        		<%= image_tag("online-sign.png", :size => "20x20") %>
+		        	<% else  %>
+		        		<%= image_tag("offline-sign.png", :size => "20x20") %>
+		        	<% end %>
+		      	</h1>
+		    </div>
+		    <div class="col-md-2" ></div>
+		</div>
+
+		<br><br>
+
+	    <div class="row">
+		    <div class="col-md-4">
+		  	  	<h2 class="text-left">Profile summary</h2><br>
+		      	<table class="table table-hover">
+		       		<tr>
+				  		<td>TotalGames</td>
+				  		<td><%= @user.totalGames %></td>
+				    </tr>
+				    <tr>
+					  	<td>Win</td>
+					  	<td><%= @user.wins %></td>
+				    </tr>
+				    <tr>
+					  	<td>Lost</td>
+					  	<td><%= @user.lost %></td>
+				    </tr>
+				    <tr>
+					  	<td>Draw</td>
+					  	<td><%= @user.draws %></td>
+				    </tr>
+				    <tr>
+					  	<td>Points</td>
+					    <td><%= @user.points %></td>
+				    </tr>
+				    <tr>
+					  	<td>Level</td>
+					  	<td><%= @user.level %></td>
+				    </tr>
+			  	</table>
+		    </div>
+	    </div>
+
+
+	</div>
+</div><br><br>
