@@ -24,7 +24,7 @@ class PasswordResetsController < ApplicationController
       redirect_to new_password_reset_path
       flash[:error] = "Password reset has expired!"
     elsif @user.update_attribute(:password, params[:user])
-      redirect_to @user
+      redirect_to root_url
       flash[:success] = "Password reset has been successful!"
     else
       render 'edit'
