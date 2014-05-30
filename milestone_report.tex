@@ -1,0 +1,54 @@
+\documentclass[12pt]{article}
+
+\usepackage{fullpage}
+\usepackage{graphicx}
+
+\setlength\parindent{0pt}
+
+\title{Milestone WebApps Report}
+\author{Yury Belevskiy, Arnas Kaminskas}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section*{Group Structure}
+To manage our work, we have set up the repository on GitHub and used {\bf git} as a main tool to share our code. We made an intensive use of such advanced {\bf git} features such as merging and branching. Yury has usually been making a new branch and working on his part while Arnas was using master branch to push his work on and occassionally we were merging those branches.
+\newline
+In terms of group allocation and organisation, there is not much to say because we are only 2 people and we didn't have any fixed meeting time: we were just meeting up in labs and trying to get done as much work as possible.
+\section*{Implementation details}
+Here is a short list of tools we are using to build our website:
+\begin{itemize}
+\item Ruby on Rails (Rails 4.1.1 and Ruby 1.9.3p545)
+\item Cloud application platform Heroku
+\item HTML,CSS,JavaScript 
+\item Heroku Postgres database
+\end{itemize}
+Rails is a main framework we have been using in our website because it has rich documentation, vast amount of online tutorials and helpful forums plus rich support with various ruby gems. Also, it is well compatible with Heroku. The reason to use Heroku was simplicity of use, free access, rich set of addons provided, in particular, we have used SendGrid and Heroku Postgres::Black addons so far. No need to explain the reasoning behind HTML and CSS as they go on every website. JavaScript is a powerful tool to create animation and can be easily embedded into Rails. And, finally, we are using PostgreSQL because Heroku doesn't support MySQL which is default in Rails.
+\section*{App Description}
+The main idea of our app is to implement bughouse chess game online. Main features we would like to present in our website are:
+\begin{itemize}
+\item Rich autorization features i.e secure passwords, sign in using sessions, welcome email, $Forgot\ my\ password$ feature etc.
+\item User profiles and leaderboards i.e graphical user status(online/offline), ability to upload profile picture, user statistics(wins,losses,levels etc.), ability to change his credentials etc.
+\item  Random games
+	\begin{itemize}
+	\item Users clicks on the button and get's placed into the queue of waiting players
+	\item Once number of players in this queue has reached multiple of 4 (4 people are needed to play the game of bughouse chess), the game/games automatically starts randomly assigning users into teams 
+	\end{itemize}
+\item Users can create their own games
+	\begin{itemize}
+	\item User can create a game and invite particular players
+	\item Ability to invite certain users($<=4$). Example: I can invite 3 friends of mine to play or I can invite my friend to play and other 2 players will be drawn from the queue of waiting players
+	\end{itemize}
+\item User notifications(invitations to play) appearing where user decides which game he/she would like to join
+\end{itemize}
+\section*{User Interactions}
+The main user interactions in our website are:
+\begin{itemize}
+\item Bughouse chess game itself, users make moves and other users are seeing it
+\item Chat between teammates in the game
+\item Ability to invite users to play with you
+\end{itemize}
+{\bf IMPORTANT}: ONLY registered users can play
+\end{document}
