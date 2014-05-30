@@ -6,7 +6,7 @@
 
 		<div class="row">
 			<div class="col-md-2" >
-				<%= image_tag("default_user_img_lightblue_bg.jpg", alt:"Responsive image",  class:"img-rounded", size: "140x140") %>
+				<%= image_tag @user.avatar.url, size: "140x140" %>
 			</div>
 		    <div class="col-md-8 my-blue">
 		      	<h1>

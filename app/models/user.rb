@@ -10,6 +10,11 @@ class User < ActiveRecord::Base
   has_secure_password
   before_save { email.downcase! }
   validates :password, length: { minimum: 6 }
+  has_attached_file :avatar, :styles => {:thumb => "100x100>"}, 
+  :default_url => ActionController::Base.helpers.asset_path('default_user_img_lightblue_bg.jpg')
+  validates_attachment_content_type :avatar, 
+                  :content_type => /\Aimage\/.*\Z/,
+                  :size => { :in => 0..64.kilobytes }
 
   def User.new_remember_token
     SecureRandom.urlsafe_base64

@@ -2,13 +2,15 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   root  'static_pages#home'  
-  match '/help',    to: 'static_pages#help',    via: 'get'
-  match '/about',   to: 'static_pages#about',   via: 'get'
-  match '/contact', to: 'static_pages#contact', via: 'get'
-  match '/signup',  to: 'users#new',            via: 'get'
-  match '/signin',  to: 'sessions#new',         via: 'get'
-  match '/signout', to: 'sessions#destroy',     via: 'delete'
-  match '/top10',to: 'users#top10',      via: 'get'
+  match '/help',         to: 'static_pages#help',    via: 'get'
+  match '/about',        to: 'static_pages#about',   via: 'get'
+  match '/contact',      to: 'static_pages#contact', via: 'get'
+  match '/signup',       to: 'users#new',            via: 'get'
+  match '/signin',       to: 'sessions#new',         via: 'get'
+  match '/signout',      to: 'sessions#destroy',     via: 'delete'
+  match '/top10',        to: 'users#top10',          via: 'get'
+  match '/remove_image', to: 'users#remove_image',   as: :remove_image, via: 'get'
+  # get "remove_image" => "users#remove_image"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

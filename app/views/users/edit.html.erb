@@ -1,14 +1,16 @@
 <% provide(:title, "Edit user") %>
-<br><h1>Update your profile</h1><br><br>
+<br><h1>Update your profile</h1><br><br><br>
 
-<div class="container">
-    <div class="col-md-3"></div>
+<div class="container my-blue">
+    <div class="col-md-3">
+        <%= image_tag @user.avatar.url, size: "200x200" %><br><br><br>
+    </div>
     <div class="col-md-6">
         <%= form_for(@user) do |f| %>
             
             <%= render 'shared/error_messages' %>
 
-            <div class="my-blue" ><%= f.label :name %>
+            <%= f.label :name %>
             <%= f.text_field :name, class: "form-control my-blue" %>
             <br>
             <%= f.label :email %>
@@ -19,19 +21,30 @@
             <br>
             <%= f.label :password_confirmation %>
             <%= f.password_field :password_confirmation, placeholder: "Confirm Password", class: "form-control my-blue" %>
-            <br><br></div>
+            <br><br>
             
             <div class="row">
-                <div class="col-md-4">
-                    <%= gravatar_for @user %>
-                    <a href="http://gravatar.com/emails">change</a>
+                <div class="field col-md-8">
+                    <%= f.label :avatar, "Upload new picture" %><br>
+                    <%= f.file_field :avatar %><br>
                 </div>
-            </div><br><br><br>
-      
+                <div class="col-md-4">
+                    <% if current_user?(@user) && @user.avatar_file_name != nil %>
+                        <%= link_to("Set default picture", {:action => 'remove_image', :id => @user.id}, :class => 'btn btn-default btn-lg btn-block') %>
+                    <% end %>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="field col-md-4  ">
+                    <%= f.submit "Update image", :class => 'btn btn-default' %>
+                </div>
+            </div><br><br>  
+
             <div class="row">
                 <div class="col-md-3"></div>
                 <div class="col-md-6">
-                    <%= f.submit "Save changes", class: "btn btn-default btn-lg btn-block" %>
+                    <%= f.submit "Save changes", :class => 'btn btn-default btn-lg btn-block' %>
                 </div>
                 <div class="col-md-3"></div>
             </div>

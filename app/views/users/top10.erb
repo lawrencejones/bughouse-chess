@@ -1,7 +1,7 @@
 <style>
 </style>
 <% provide(:title, 'Top users') %><br>
-<h1>Top 10 Players</h1><br><br>
+<h1>Top 10 players</h1><br><br>
 <div class="row">
   <div class="col-md-2"></div>
   <div class="col-md-8">
@@ -15,8 +15,9 @@
       <% @users.each_with_index do |user, index| %>
         <tr>
           <td><%= index + 1 %></td>
-          <td><%= gravatar_for user, size: 52 %>
-      	      <%= link_to user.name, user %></td>
+          <td>
+            <%= image_tag user.avatar.url, size: "50x50" %>
+      	    <%= link_to user.name, user %></td>
           <td><%= user.level %></td>
           <td><%= user.points %></td>
         </tr>

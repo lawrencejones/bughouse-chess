@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140527185537) do
+ActiveRecord::Schema.define(version: 20140529181347) do
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -20,14 +20,18 @@ ActiveRecord::Schema.define(version: 20140527185537) do
     t.datetime "updated_at"
     t.string   "password_digest"
     t.string   "remember_token"
-    t.boolean  "admin",           default: false
-    t.integer  "totalGames",      default: 0
-    t.integer  "wins",            default: 0
-    t.integer  "lost",            default: 0
-    t.integer  "draws",           default: 0
-    t.integer  "points",          default: 0
-    t.string   "level",           default: "Beginner"
-    t.datetime "lastSeen",        default: '2014-05-28 16:43:45'
+    t.boolean  "admin",               default: false
+    t.integer  "totalGames",          default: 0
+    t.integer  "wins",                default: 0
+    t.integer  "lost",                default: 0
+    t.integer  "draws",               default: 0
+    t.integer  "points",              default: 0
+    t.string   "level",               default: "Beginner"
+    t.datetime "lastSeen",            default: '2014-05-28 16:43:45'
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
-  before_action :signed_in_user, only: [:index, :edit, :update, :destroy]
+  before_action :signed_in_user, only: [:index, :edit, :update, :destroy, :top10]
   before_action :correct_user,   only: [:edit, :update]
   before_action :admin_user,     only: :destroy
 
+  helper_method :remove_image
+ 
 
   def index
     if params[:search]
@@ -26,24 +28,46 @@ class UsersController < ApplicationController
     @users = User.order('points DESC')[1..10]
   end
 
+  def remove_image
+    @user = User.find(params[:id])
+    if @user.update_attribute(:avatar, nil)
+      flash[:success] = "Profile picture has been successfully set to default." 
+      redirect_to edit_user_path(@user) 
+    else 
+      render 'edit'
+    end
+  end
+
   def show
   	@user = User.find(params[:id])
   end
 
   def new
-  	@user = User.new
+    @user = User.new 
   end
 
   def edit
   end
 
   def update
-    if @user.update_attributes(user_params)
-	  flash[:success] = "Profile updated"
-      redirect_to @user    
-    else
-      render 'edit'
-    end
+     if params[:commit] == "Save changes"
+        if @user.update_attributes(user_params)
+          flash[:success] = "Profile updated"
+          redirect_to edit_user_path(@user)     
+        else
+          render 'edit'
+        end
+      elsif params[:commit] == "Update image"
+        @user = User.find(params[:id])
+        if user_params[:avatar] && @user.update_attribute(:avatar, user_params[:avatar])
+          flash[:success] = "Profile picture has been successfully updated."
+          redirect_to edit_user_path(@user) 
+        else 
+          flash[:danger] = "Image path is not valid."
+          render 'edit'
+        end
+     end
+    
   end
 
   def destroy
@@ -67,8 +91,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :password,
-                                   :password_confirmation)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar)
     end
 
     def signed_in_user

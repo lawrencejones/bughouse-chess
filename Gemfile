@@ -10,6 +10,7 @@ gem 'rails-assets-bootstrap-ios7'
 gem 'rails-assets-bootstrap'
 gem 'rails-assets-angular'
 gem 'rails-assets-leaflet'
+gem "paperclip", "~> 4.1"
 
 # Use postgresql as the database for Active Record
 gem 'bcrypt-ruby', '3.1.2'
