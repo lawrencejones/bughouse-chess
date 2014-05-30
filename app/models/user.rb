@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   before_save { email.downcase! }
   validates :password, length: { minimum: 6 }
 
-  def User.new_remember_token
+  def User.new_token
     SecureRandom.urlsafe_base64
   end
 
@@ -21,10 +21,24 @@ class User < ActiveRecord::Base
   def self.search(query)
     where("name like ?", "%#{query}%") 
   end
+  
+  def create_unique_token
+   self.password_reset_token = loop do
+      any_token = User.new_token
+      break any_token unless User.exists?(password_reset_token: any_token)
+    end
+  end
+  
+  def send_reset_email
+    update_attribute(:password_reset_token, create_unique_token)
+    update_attribute(:password_reset_sent_at, Time.zone.now)
+    UserMailer.send_password_reset_email(self).deliver
+  end
 
   private
 
     def create_remember_token
-      self.remember_token = User.digest(User.new_remember_token)
+      self.remember_token = User.digest(User.new_token)
     end
+    
 end
