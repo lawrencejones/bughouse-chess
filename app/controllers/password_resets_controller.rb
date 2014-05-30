@@ -23,12 +23,19 @@ class PasswordResetsController < ApplicationController
     if Time.zone.now - (2/24.0) < @user.password_reset_sent_at
       redirect_to new_password_reset_path
       flash[:error] = "Password reset has expired!"
-    elsif @user.update_attribute(:password, params[:user])
+    elsif @user.update_attributes(updated_user_params)
       redirect_to root_url
       flash[:success] = "Password reset has been successful!"
     else
       render 'edit'
     end
   end
+  
+  private
+    
+    def updated_user_params
+      params.require(:user).permit(:password,
+      :password_confirmation)
+    end
   
 end
