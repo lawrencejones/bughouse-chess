@@ -32,7 +32,10 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
   
-  #Emailing stuff
+  #Mailer settings. To be changed for Heroku deployment
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  
+  #Configuring Mailer to use SendGrid SMTP server
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true

@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+# <<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140529181347) do
+# =======
+# ActiveRecord::Schema.define(version: 20140528225057) do
+# >>>>>>> 839918e024a386d4abf08fc215e6c1f1bbdb6a38
 
   create_table "users", force: true do |t|
     t.string   "name"
@@ -32,6 +36,8 @@ ActiveRecord::Schema.define(version: 20140529181347) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_sent_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
