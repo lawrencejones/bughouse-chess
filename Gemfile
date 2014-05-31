@@ -34,7 +34,7 @@ gem 'foreman', '~> 0.55.0'
 gem 'thor'
 #gem 'dotenv'
 # Use jquery as the JavaScript library
-gem 'jquery-rails', '~> 2.1.1'
+gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 #Required for sending mails
