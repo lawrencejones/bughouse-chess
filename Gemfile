@@ -8,7 +8,7 @@ gem 'rails', '4.1.1'
 gem 'sprockets', '2.11.0'
 gem 'rails-assets-bootstrap-ios7'
 gem 'rails-assets-bootstrap'
-gem 'rails-assets-angular'
+gem 'angularjs-rails'
 gem 'rails-assets-leaflet'
 gem "paperclip", "~> 4.1"
 
