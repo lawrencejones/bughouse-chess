@@ -14,7 +14,6 @@ Rails.application.routes.draw do
   match '/top10',        to: 'users#top10',          via: 'get'
   match '/remove_image', to: 'users#remove_image',   as: :remove_image, via: 'get'
   match '/password_resets/:id/edit', to: 'password_resets#update', via: 'patch'
-  # get "remove_image" => "users#remove_image"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
