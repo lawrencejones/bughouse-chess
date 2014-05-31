@@ -18,7 +18,6 @@ gem 'minitest'
 gem 'faker', '1.1.2'
 gem 'will_paginate', '~>3.0.4'
 gem 'bootstrap-will_paginate', "0.0.10"
-gem 'jquery-rails'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
@@ -32,7 +31,7 @@ gem 'foreman', '~> 0.55.0'
 gem 'thor'
 #gem 'dotenv'
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 2.1.1'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 #Required for sending mails
