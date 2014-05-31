@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+source 'https://rails-assets.org'
 
 ruby '1.9.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -10,15 +11,17 @@ gem 'rails-assets-bootstrap-ios7'
 gem 'rails-assets-bootstrap'
 gem 'rails-assets-angular'
 gem 'rails-assets-leaflet'
-gem "paperclip", "~> 4.1"
+gem 'paperclip', '~> 4.1'
 
 # Use postgresql as the database for Active Record
 gem 'bcrypt-ruby', '3.1.2'
 gem 'minitest'
 gem 'faker', '1.1.2'
 gem 'will_paginate', '~>3.0.4'
-gem 'bootstrap-will_paginate', "0.0.10"
+gem 'bootstrap-will_paginate', '0.0.10'
 
+#Adding JQuery for validation
+gem 'jquery-validation-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
