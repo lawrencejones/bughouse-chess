@@ -10,7 +10,7 @@ class PasswordResetsController < ApplicationController
       flash[:success] = "Email with instructions has been sent"
     else     
       redirect_to new_password_reset_path
-      flash[:error] = "Invalid e-mail!"
+      flash[:danger] = "Invalid e-mail!"
     end
   end
     
@@ -22,7 +22,7 @@ class PasswordResetsController < ApplicationController
     @user = User.find_by(password_reset_token: params[:id])
     if @user.password_reset_sent_at < 15.minutes.ago
       redirect_to new_password_reset_path
-      flash[:error] = "Password reset has expired!"
+      flash[:danger] = "Password reset has expired!"
     elsif @user.update_attributes(updated_user_params)
       redirect_to root_url
       flash[:success] = "Password reset has been successful!"
