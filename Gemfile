@@ -20,8 +20,6 @@ gem 'faker', '1.1.2'
 gem 'will_paginate', '~>3.0.4'
 gem 'bootstrap-will_paginate', '0.0.10'
 
-#Adding JQuery for validation
-gem 'jquery-validation-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -34,9 +32,13 @@ gem 'foreman', '~> 0.55.0'
 gem 'thor'
 #gem 'dotenv'
 # Use jquery as the JavaScript library
-gem 'jquery-rails', '~> 2.1.1'
+gem 'jquery-rails'
+gem 'jquery-validation-rails'
+#Adding turbolinks gem for speed
+#gem 'jquery-turbolinks'
+
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+#gem 'jquery-turbolinks'
 #Required for sending mails
 gem 'mail', '~> 2.5.4'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder

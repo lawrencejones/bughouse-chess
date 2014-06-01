@@ -12,13 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.validate
+//= require jquery.validate.additional-methods
 //= require bootstrap-ios7
+//= require_tree .
 
 //= require angular
 //= require leaflet
-
-//= require turbolinks
-//= require_tree .
-
-//= require jquery.validate
-//= require jquery.validate.additional-methods
+	

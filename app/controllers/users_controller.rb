@@ -79,6 +79,9 @@ class UsersController < ApplicationController
   def create
   	@user = User.new(user_params)
   	if @user.save
+	  	respond_to do |format|
+	  		format.json { render :json => !@user }
+	  end
   		sign_in @user
   		UserMailer.send_signup_email(@user).deliver
   		flash[:success] = "Welcome to the Bughouse Chess App!"
