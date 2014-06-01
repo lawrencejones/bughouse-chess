@@ -2,31 +2,31 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-$(document).ready ->
-  $('.signup-form').validate
+$ ->
+  $('#signup-form').validate
+    errorClass: 'danger'
     rules:
-      name:
-        required: true
-        minlength: 3
-      email:
+      'user[name]': 'required'
+      'user[email]':
         required: true
         email: true
-      password:
+      'user[password]':
         required: true
         minlength: 6
-      password_confirmation:
+      'user[password_confirmation]':
         required: true
         equalTo: "#password"
     messages:
-      name:
+      'user[name]':
         required: "Please input your nickname"
         minlength: "Your name should be at least 3 characters long"
-      email:
+      'user[email]':
         required: "Please input your valid input address"
         email: "Your email address must be in the format of name@domain.com"
-      password:
+      'user[password]':
         required: "Please input your password"
         minlength: "Your password should be at least 6 characters long"
-      password_confirmation:
-        requited: "Please confirm your password"  
-  return
+      'user[password_confirmation]':
+        requited: "Please confirm your password"
+
+

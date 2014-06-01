@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20140529181347) do
     t.integer  "draws",                  default: 0
     t.integer  "points",                 default: 0
     t.string   "level",                  default: "Beginner"
-    t.datetime "lastSeen",               default: '2014-05-31 21:07:53'
+    t.datetime "lastSeen",               default: '2014-06-01 14:58:58'
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
     t.string   "avatar_file_name"
